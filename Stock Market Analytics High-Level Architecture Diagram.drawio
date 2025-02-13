@@ -1,0 +1,137 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 OPR/116.0.0.0" version="26.0.13">
+  <diagram name="Page-1" id="nSWw3oOFzLTxzGEblgA5">
+    <mxGraphModel dx="858" dy="458" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="-EV4XiVta61y5kKdB2jz-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;strokeColor=#006658;fontColor=default;" edge="1" parent="1" source="-EV4XiVta61y5kKdB2jz-2" target="-EV4XiVta61y5kKdB2jz-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-2" value="&lt;span style=&quot;font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Noto Sans&amp;quot;, &amp;quot;Liberation Sans&amp;quot;, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; font-size: 15px; text-align: left;&quot;&gt;Data Ingestion Service&lt;/span&gt;" style="html=1;whiteSpace=wrap;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;fillColor=#21C0A5;strokeColor=#006658;fontColor=#00CCCC;" vertex="1" parent="1">
+          <mxGeometry x="256" y="390" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;strokeColor=#006658;fontColor=default;" edge="1" parent="1" source="-EV4XiVta61y5kKdB2jz-3" target="-EV4XiVta61y5kKdB2jz-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="336" y="650" />
+              <mxPoint x="337" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-3" value="&lt;span style=&quot;font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Noto Sans&amp;quot;, &amp;quot;Liberation Sans&amp;quot;, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; font-size: 15px; text-align: left;&quot;&gt;Real-Time Processing Service&lt;/span&gt;" style="html=1;whiteSpace=wrap;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;fillColor=#21C0A5;strokeColor=#006658;fontColor=#00CCCC;" vertex="1" parent="1">
+          <mxGeometry x="257" y="530" width="158" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;strokeColor=#006658;fontColor=default;" edge="1" parent="1" source="-EV4XiVta61y5kKdB2jz-4" target="-EV4XiVta61y5kKdB2jz-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;entryX=-0.01;entryY=0.348;entryDx=0;entryDy=0;entryPerimeter=0;labelBackgroundColor=none;strokeColor=#006658;fontColor=default;" edge="1" parent="1" source="-EV4XiVta61y5kKdB2jz-4" target="-EV4XiVta61y5kKdB2jz-24">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="497" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-4" value="&lt;span style=&quot;font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Noto Sans&amp;quot;, &amp;quot;Liberation Sans&amp;quot;, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; font-size: 15px; text-align: left;&quot;&gt;Data Storage Service&lt;/span&gt;" style="html=1;whiteSpace=wrap;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;fillColor=#21C0A5;strokeColor=#006658;fontColor=#00CCCC;" vertex="1" parent="1">
+          <mxGeometry x="257" y="660" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;strokeColor=#006658;fontColor=default;" edge="1" parent="1" source="-EV4XiVta61y5kKdB2jz-5" target="-EV4XiVta61y5kKdB2jz-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-5" value="&lt;span style=&quot;font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Noto Sans&amp;quot;, &amp;quot;Liberation Sans&amp;quot;, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; font-size: 15px; text-align: left;&quot;&gt;Data Analysis Service&lt;/span&gt;" style="html=1;whiteSpace=wrap;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;fillColor=#21C0A5;strokeColor=#006658;fontColor=#00CCCC;" vertex="1" parent="1">
+          <mxGeometry x="257" y="790" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-6" value="&lt;span style=&quot;font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Noto Sans&amp;quot;, &amp;quot;Liberation Sans&amp;quot;, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; font-size: 15px; text-align: left;&quot;&gt;Data Visualization Service&lt;/span&gt;" style="html=1;whiteSpace=wrap;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;fillColor=#21C0A5;strokeColor=#006658;fontColor=#00CCCC;" vertex="1" parent="1">
+          <mxGeometry x="257" y="925" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;curved=1;exitX=0.55;exitY=0.95;exitDx=0;exitDy=0;exitPerimeter=0;labelBackgroundColor=none;strokeColor=#006658;fontColor=default;" edge="1" parent="1" source="-EV4XiVta61y5kKdB2jz-15" target="-EV4XiVta61y5kKdB2jz-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="335.0588235294117" y="300" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="370" y="285" />
+              <mxPoint x="370" y="370" />
+              <mxPoint x="240" y="370" />
+              <mxPoint x="240" y="403" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-15" value="&lt;span style=&quot;font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Noto Sans&amp;quot;, &amp;quot;Liberation Sans&amp;quot;, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; font-size: 15px; text-align: left;&quot;&gt;Alpha Vantage/&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Noto Sans&amp;quot;, &amp;quot;Liberation Sans&amp;quot;, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; font-size: 15px; text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 14.9968px;&quot;&gt;Yahoo Finance&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;fillColor=#21C0A5;strokeColor=#006658;fontColor=#00CCCC;" vertex="1" parent="1">
+          <mxGeometry x="270" y="180" width="165" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-16" value="&lt;span style=&quot;font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Noto Sans&amp;quot;, &amp;quot;Liberation Sans&amp;quot;, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; font-size: 15px; text-align: left;&quot;&gt;Stock Market&lt;/span&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;fillColor=#21C0A5;strokeColor=#006658;fontColor=#00CCCC;" vertex="1" parent="1">
+          <mxGeometry x="120" y="210" width="165" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.002;entryY=0.648;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;curved=1;exitX=0.55;exitY=0.95;exitDx=0;exitDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=none;strokeColor=#006658;fontColor=default;" edge="1" parent="1" source="-EV4XiVta61y5kKdB2jz-16" target="-EV4XiVta61y5kKdB2jz-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="251" y="300" as="sourcePoint" />
+            <mxPoint x="150" y="430" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="200" y="315" />
+              <mxPoint x="200" y="422" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-18" value="(http or websocket)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;fontColor=#00CCCC;" vertex="1" parent="1">
+          <mxGeometry x="210" y="330" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-21" value="(Apache kafka)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;fontColor=#00CCCC;" vertex="1" parent="1">
+          <mxGeometry x="237" y="590" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;curved=1;labelBackgroundColor=none;strokeColor=#006658;fontColor=default;" edge="1" parent="1" source="-EV4XiVta61y5kKdB2jz-3" target="-EV4XiVta61y5kKdB2jz-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="480" />
+              <mxPoint x="487" y="480" />
+              <mxPoint x="487" y="563" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-23" value="(Apahe Spark Streaming)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;fontColor=#00CCCC;" vertex="1" parent="1">
+          <mxGeometry x="377" y="450" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.646;exitDx=0;exitDy=0;entryX=1.012;entryY=0.742;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=none;strokeColor=#006658;fontColor=default;" edge="1" parent="1" source="-EV4XiVta61y5kKdB2jz-24" target="-EV4XiVta61y5kKdB2jz-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-24" value="" style="shape=datastore;whiteSpace=wrap;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;fillColor=#21C0A5;strokeColor=#006658;fontColor=#5C5C5C;" vertex="1" parent="1">
+          <mxGeometry x="537" y="643.5" width="83" height="83" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-29" value="(Cassandra or PostgreSQL)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;fontColor=#00CCCC;" vertex="1" parent="1">
+          <mxGeometry x="527" y="610" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-31" value="(Filtering, aggregation and transformation of data)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;fontColor=#00CCCC;" vertex="1" parent="1">
+          <mxGeometry x="487" y="490" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.158;entryY=0.02;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;curved=1;labelBackgroundColor=none;strokeColor=#006658;fontColor=default;" edge="1" parent="1" source="-EV4XiVta61y5kKdB2jz-5" target="-EV4XiVta61y5kKdB2jz-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="217" y="815" />
+              <mxPoint x="217" y="740" />
+              <mxPoint x="282" y="740" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-37" value="(Analysis using ML and SA)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;fontColor=#00CCCC;" vertex="1" parent="1">
+          <mxGeometry x="137" y="720" width="85" height="42.5" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-38" value="(Generates trends, predictions and reports)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;fontColor=#00CCCC;" vertex="1" parent="1">
+          <mxGeometry x="187" y="850" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-39" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=none;verticalAlign=top;strokeWidth=2;strokeColor=#006658;shadow=0;dashed=0;shape=mxgraph.ios7.icons.monitor;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fillColor=none;fontColor=#5C5C5C;" vertex="1" parent="1">
+          <mxGeometry x="527" y="910" width="123.08" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.013;entryY=0.49;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;strokeColor=#006658;fontColor=default;" edge="1" parent="1" source="-EV4XiVta61y5kKdB2jz-6" target="-EV4XiVta61y5kKdB2jz-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-41" value="(Visualizes using Plotly)&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;fontColor=#00CCCC;" vertex="1" parent="1">
+          <mxGeometry x="427" y="910" width="82" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-43" value="" style="sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#21C0A5;shape=mxgraph.mscae.general.graph;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;fontColor=#5C5C5C;" vertex="1" parent="1">
+          <mxGeometry x="563" y="917" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-45" value="WEB INTERFACE" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;labelBackgroundColor=none;fontColor=#00CCCC;" vertex="1" parent="1">
+          <mxGeometry x="530.08" y="880" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-EV4XiVta61y5kKdB2jz-47" value="HIGH LEVEL ARCHITECTURE DESIGN" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=26;labelBackgroundColor=none;fontColor=#00CCCC;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="470" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
