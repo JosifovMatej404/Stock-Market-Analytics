@@ -15,4 +15,7 @@ The Data Visualization Service provides a web interface for visualizing analyzed
 By integrating these services, the system will deliver a fast, scalable, and reliable solution for real-time financial analysis.
 <br>
 <br>
+<br>
+<br>
+<br>
 ![Financial Data Pipeline](Stock%20Market%20Analytics%20High-Level%20Architecture%20Diagram.png)
