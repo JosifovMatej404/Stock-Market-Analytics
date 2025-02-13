@@ -16,7 +16,6 @@ The Data Visualization Service provides a web interface for visualizing analyzed
 By integrating these services, the system will deliver a fast, scalable, and reliable solution for real-time financial analysis.
 
 <br>
-<br>
 ---
 <br>
 <br>
