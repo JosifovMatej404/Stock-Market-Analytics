@@ -1,5 +1,4 @@
-<h1>Project Description: System for Processing, Analyzing, and Visualizing Financial Data</h1>
-<br>
+<h3>Project Description: System for Processing, Analyzing, and Visualizing Financial Data</h3>
 
 This project aims to provide an integrated system for collecting, processing, storing, analyzing, and visualizing financial data. The system consists of five interconnected services, each with a specific role.
 
@@ -15,8 +14,10 @@ The Data Visualization Service provides a web interface for visualizing analyzed
 
 By integrating these services, the system will deliver a fast, scalable, and reliable solution for real-time financial analysis.
 
-<br>
 ---
+
 <br>
+
 <br>
+
 ![Financial Data Pipeline](Stock%20Market%20Analytics%20High-Level%20Architecture%20Diagram.png)
