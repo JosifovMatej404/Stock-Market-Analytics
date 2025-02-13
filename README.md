@@ -14,6 +14,7 @@ The Data Analysis Service applies machine learning algorithms and statistical an
 The Data Visualization Service provides a web interface for visualizing analyzed data using D3.js or Plotly, displaying graphs and tables to support better decision-making.
 
 By integrating these services, the system will deliver a fast, scalable, and reliable solution for real-time financial analysis.
+
 <br>
 <br>
 ---
