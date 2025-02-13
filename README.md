@@ -1,6 +1,5 @@
+<h1>Project Description: System for Processing, Analyzing, and Visualizing Financial Data</h1>
 <br>
-<br>
-Project Description: System for Processing, Analyzing, and Visualizing Financial Data
 
 This project aims to provide an integrated system for collecting, processing, storing, analyzing, and visualizing financial data. The system consists of five interconnected services, each with a specific role.
 
