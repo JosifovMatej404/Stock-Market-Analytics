@@ -19,4 +19,4 @@ By integrating these services, the system will deliver a fast, scalable, and rel
 
 <br>
 
-![Financial Data Pipeline](Stock%20Market%20Analytics%20High-Level%20Architecture%20Diagram.png)
+![Financial Data Pipeline](Architecture/High-Level/Stock%20Market%20Analytics%20High-Level%20Architecture%20Diagram.png)
