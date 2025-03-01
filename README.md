@@ -13,6 +13,8 @@ The Data Analysis Service applies machine learning algorithms and statistical an
 The Data Visualization Service provides a web interface for visualizing analyzed data using D3.js or Plotly, displaying graphs and tables to support better decision-making.
 
 By integrating these services, the system will deliver a fast, scalable, and reliable solution for real-time financial analysis.
+
+Mockup: https://www.figma.com/design/V3mX8VN8F7U72oBzyZqgG5/MOCKUP-FOR-SMA?node-id=0-1&p=f&t=0CeB3qTEfKYRdInP-0
 <h1></h1>
 
 <br>
