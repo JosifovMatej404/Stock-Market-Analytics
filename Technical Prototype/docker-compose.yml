@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper:latest
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+
+  kafka:
+    image: wurstmeister/kafka:latest
+    container_name: kafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      ALLOW_PLAINTEXT_LISTENER: "yes"
+    depends_on:
+      - zookeeper
+
+  spark-master:
+    image: bitnami/spark:latest
+    container_name: spark-master
+    environment:
+      - SPARK_MODE=master
+    ports:
+      - "7077:7077"
+      - "8080:8080"
+
+  spark-worker:
+    image: bitnami/spark:latest
+    container_name: spark-worker
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    depends_on:
+      - spark-master
+
+  kafka-producer:
+    build: ./producer
+    container_name: kafka-producer
+    depends_on:
+      - kafka
+    volumes:
+      - ./producer:/app
+    command: [ "python", "/app/kafka_producer.py" ]
+
+
+  kafka-consumer:
+    build: ./consumer
+    container_name: kafka-consumer
+    depends_on:
+      - kafka
+    volumes:
+      - ./consumer:/app
+    command: ["python", "/app/kafka_consumer.py"]
+
+  dash-app:
+    build: ./dash
+    container_name: dash-app
+    ports:
+      - "8050:8050"
+    depends_on:
+      - kafka-consumer
+    volumes:
+      - ./dash:/app
+    command: [ "python", "/app/dash_viz.py" ]
+
