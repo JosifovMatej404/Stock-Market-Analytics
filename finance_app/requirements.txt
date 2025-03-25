@@ -25,12 +25,14 @@ kombu==5.5.1
 lxml==5.3.1
 matplotlib==3.10.1
 multitasking==0.0.11
+narwhals==1.32.0
 numpy==2.2.4
 packaging==24.2
 pandas==2.2.3
 peewee==3.17.9
 pillow==11.1.0
 platformdirs==4.3.7
+plotly==6.0.1
 prompt_toolkit==3.0.50
 psycopg2-binary==2.9.10
 pyparsing==3.2.3

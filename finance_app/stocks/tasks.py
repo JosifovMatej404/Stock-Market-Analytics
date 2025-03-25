@@ -37,3 +37,9 @@ def ingest_realtime_all_stocks():
 def analyze_all_stocks():
     for stock in Stock.objects.all():
         analyze_stock(stock.symbol)
+
+
+
+@shared_task
+def analyze_stock_task(symbol):
+    analyze_stock(symbol)

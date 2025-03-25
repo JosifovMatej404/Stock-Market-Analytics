@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Stock Analyzer{% endblock %}</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f4f4; }
+        nav {
+            background: linear-gradient(90deg, #1c1c1c, #2f2f2f);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 600;
+        }
+        .container { padding: 30px; max-width: 1200px; margin: auto; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div><strong>📈 Stock Market Analyzer</strong></div>
+        <div>
+            <a href="{% url 'landing' %}">🏠 Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

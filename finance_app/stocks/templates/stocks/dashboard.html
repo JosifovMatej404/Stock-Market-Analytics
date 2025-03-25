@@ -1,19 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ stock.symbol }} Dashboard</title>
-</head>
-<body>
-    <h1>{{ stock.symbol }} 📊</h1>
+{% extends "stocks/base.html" %}
+{% block title %}{{ stock.symbol }} Dashboard{% endblock %}
+
+{% block content %}
+<div style="max-width: 1000px; margin: auto; background: white; padding: 30px; border-radius: 10px;">
+    <h1>{{ stock.symbol }} 📊 Dashboard</h1>
 
     {% if signal %}
         <p><strong>Trend:</strong> {{ signal.trend }}</p>
         <p><strong>Suggested Action:</strong> {{ signal.action }}</p>
         <p><strong>Predicted Price:</strong> ${{ signal.predicted_price|floatformat:2 }}</p>
     {% else %}
-        <p>No signal data available for this company yet.</p>
+        <p>No signal data available.</p>
     {% endif %}
 
+    <form method="post" action="{% url 'regenerate_prediction' stock.symbol %}" style="margin-top: 30px;">
+        {% csrf_token %}
+        <button type="submit" style="padding: 10px 20px; font-weight: bold;">🔄 Regenerate Prediction</button>
+    </form>
+
+    {% if candle_chart %}
+        <h3 style="margin-top: 30px;">🕯️ Candlestick Chart (Zoomable)</h3>
+        <div>{{ candle_chart|safe }}</div>
+    {% endif %}
+
+
+
+    <br>
     <a href="{% url 'landing' %}">← Back to Company List</a>
-</body>
-</html>
+</div>
+{% endblock %}
