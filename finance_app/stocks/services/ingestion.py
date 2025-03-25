@@ -7,12 +7,12 @@ from datetime import datetime
 from stocks.models import Stock, StockData
 
 def fetch_historical_data(symbol: str, period="5y", interval="1d"):
-    print(f"📥 Fetching historical data for {symbol} ({period}, {interval})")
+    print(f"Fetching historical data for {symbol} ({period}, {interval})")
 
     df = yf.download(symbol, period=period, interval=interval, progress=False)
 
     if df.empty:
-        print(f"⚠️ No data returned for {symbol}")
+        print(f" No data returned for {symbol}")
         return
 
     # Flatten MultiIndex if needed
@@ -37,7 +37,7 @@ def fetch_historical_data(symbol: str, period="5y", interval="1d"):
                 }
             )
         except Exception as e:
-            print(f"⚠️ Skipping row at {dt} due to error: {e}")
+            print(f"Skipping row at {dt} due to error: {e}")
             continue
 
     print(f"✅ Done: {symbol}")
@@ -67,3 +67,42 @@ def store_sp500_symbols():
     for symbol in symbols:
         Stock.objects.get_or_create(symbol=symbol)
     print(f"✅ Stored {len(symbols)} S&P 500 symbols.")
+
+
+def fetch_all_realtime_data():
+    """
+    Fetches the latest 1-minute data for all tracked stocks in DB.
+    """
+    print("Starting realtime batch fetch...")
+    stocks = Stock.objects.all()
+
+    for stock in stocks:
+        try:
+            ticker = yf.Ticker(stock.symbol)
+            df = ticker.history(period="1d", interval="1m", prepost=False)
+
+            if df.empty:
+                print(f"No data for {stock.symbol}")
+                continue
+
+            latest_timestamp = df.index[-1].to_pydatetime().replace(tzinfo=pytz.UTC)
+            latest_row = df.iloc[-1]
+
+            StockData.objects.update_or_create(
+                stock=stock,
+                timestamp=latest_timestamp,
+                defaults={
+                    "open": float(latest_row["Open"]),
+                    "high": float(latest_row["High"]),
+                    "low": float(latest_row["Low"]),
+                    "close": float(latest_row["Close"]),
+                    "volume": int(latest_row["Volume"]),
+                }
+            )
+
+            print(f" {stock.symbol} stored at {latest_timestamp}")
+
+        except Exception as e:
+            print(f" Error for {stock.symbol}: {e}")
+
+    print("Realtime batch fetch complete.")

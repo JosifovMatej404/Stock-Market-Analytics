@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ stock.symbol }} Dashboard</title>
+</head>
+<body>
+    <h1>{{ stock.symbol }} 📊</h1>
+
+    {% if signal %}
+        <p><strong>Trend:</strong> {{ signal.trend }}</p>
+        <p><strong>Suggested Action:</strong> {{ signal.action }}</p>
+        <p><strong>Predicted Price:</strong> ${{ signal.predicted_price|floatformat:2 }}</p>
+    {% else %}
+        <p>No signal data available for this company yet.</p>
+    {% endif %}
+
+    <a href="{% url 'landing' %}">← Back to Company List</a>
+</body>
+</html>

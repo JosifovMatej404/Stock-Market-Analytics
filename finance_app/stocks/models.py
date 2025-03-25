@@ -21,3 +21,19 @@ class StockData(models.Model):
 
     def __str__(self):
         return f"{self.stock.symbol} at {self.timestamp}"
+
+
+class StockSignal(models.Model):
+    stock = models.ForeignKey(Stock, on_delete=models.CASCADE)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    trend = models.CharField(max_length=20)  # 'UP', 'DOWN', 'SIDEWAYS'
+    action = models.CharField(max_length=10)  # 'BUY', 'SELL', 'HOLD'
+    predicted_price = models.FloatField(null=True, blank=True)
+
+    class Meta:
+        unique_together = ('stock', 'timestamp')
+        ordering = ['-timestamp']
+
+    def __str__(self):
+        return f"{self.stock.symbol} - {self.trend} - {self.action} - {self.timestamp.strftime('%Y-%m-%d %H:%M')}"
