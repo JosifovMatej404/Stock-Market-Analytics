@@ -1,19 +1,40 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ stock.symbol }} Dashboard</title>
-</head>
-<body>
-    <h1>{{ stock.symbol }} 📊</h1>
+{% extends "stocks/base.html" %}
+{% block title %}{{ stock.symbol }} Dashboard{% endblock %}
 
-    {% if signal %}
-        <p><strong>Trend:</strong> {{ signal.trend }}</p>
-        <p><strong>Suggested Action:</strong> {{ signal.action }}</p>
-        <p><strong>Predicted Price:</strong> ${{ signal.predicted_price|floatformat:2 }}</p>
-    {% else %}
-        <p>No signal data available for this company yet.</p>
+{% block content %}
+<div style="max-width: 1100px; margin: auto; background: white; padding: 30px; border-radius: 10px;">
+    <h1 style="text-align: center;">{{ stock.symbol }} 📊 Dashboard</h1>
+
+    {% if candle_chart %}
+        <div style="margin: 30px 0;">
+            <h3 style="margin-bottom: 10px;">Candlestick Chart</h3>
+            <div>{{ candle_chart|safe }}</div>
+        </div>
     {% endif %}
 
-    <a href="{% url 'landing' %}">← Back to Company List</a>
-</body>
-</html>
+    {% if signal %}
+        <div style="display: flex; justify-content: space-between; gap: 20px; margin-top: 40px; text-align: center;">
+            <div style="flex: 1; background: {{ trend_color }}; padding: 20px; border-radius: 10px; color: white;">
+                <h3>📈 Trend</h3>
+                <p style="font-size: 20px; font-weight: bold;">{{ signal.trend }}</p>
+            </div>
+            <div style="flex: 1; background: {{ action_color }}; padding: 20px; border-radius: 10px; color: white;">
+                <h3>🧠 Suggested Action</h3>
+                <p style="font-size: 20px; font-weight: bold;">{{ signal.action }}</p>
+            </div>
+            <div style="flex: 1; background: #f2f2f2; padding: 20px; border-radius: 10px;">
+                <h3 style="color: #333;">💰 Predicted Price</h3>
+                <p style="font-size: 20px; font-weight: bold; color: #444;">${{ signal.predicted_price|floatformat:2 }}</p>
+            </div>
+        </div>
+    {% else %}
+        <p style="margin-top: 20px;">No signal data available.</p>
+    {% endif %}
+
+    <div style="margin-top: 40px; text-align: center;">
+        <a href="{% url 'landing' %}" style="background: #2c3e50; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">
+            ← Back to Company List
+        </a>
+    </div>
+</div>
+{% endblock %}

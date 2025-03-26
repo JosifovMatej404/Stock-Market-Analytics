@@ -2,6 +2,7 @@ from stocks.models import Stock, StockData, StockSignal
 import pandas as pd
 from datetime import timedelta
 import numpy as np
+from stocks.services.visualization import plot_candlestick_chart  # <- Important!
 
 def analyze_stock(symbol):
     try:
@@ -29,14 +30,9 @@ def analyze_stock(symbol):
             trend = "SIDEWAYS"
 
         # Simple action suggestion
-        if trend == "UP":
-            action = "BUY"
-        elif trend == "DOWN":
-            action = "SELL"
-        else:
-            action = "HOLD"
+        action = {"UP": "BUY", "DOWN": "SELL", "SIDEWAYS": "HOLD"}[trend]
 
-        # Predict next close using basic linear regression (for fun)
+        # Predict next close using linear regression
         df['timestamp_ordinal'] = df.index.map(pd.Timestamp.toordinal)
         x = df['timestamp_ordinal'].values[-15:].reshape(-1, 1)
         y = df['close'].values[-15:]
@@ -44,14 +40,20 @@ def analyze_stock(symbol):
         next_day = df.index[-1] + timedelta(days=1)
         next_price = coeffs[0] * next_day.toordinal() + coeffs[1]
 
-        # Store signal
+        # Generate candlestick HTML
+        chart_html = plot_candlestick_chart(symbol)
+        if not chart_html:
+            print(f"No chart HTML for {symbol}")
+            return
+
         StockSignal.objects.create(
             stock=stock,
             trend=trend,
             action=action,
-            predicted_price=next_price
+            predicted_price=next_price,
+            candle_chart_html=chart_html
         )
-        print(f"Analyzed {symbol} → Trend: {trend}, Action: {action}, Predicted: {next_price:.2f}")
+        print(f"{symbol} analyzed → {trend} | {action} | Predicted ${next_price:.2f}")
 
     except Exception as e:
-        print(f"❌ Error analyzing {symbol}: {e}")
+        print(f"Error analyzing {symbol}: {e}")

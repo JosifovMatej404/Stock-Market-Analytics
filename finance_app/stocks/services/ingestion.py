@@ -40,7 +40,7 @@ def fetch_historical_data(symbol: str, period="5y", interval="1d"):
             print(f"Skipping row at {dt} due to error: {e}")
             continue
 
-    print(f"✅ Done: {symbol}")
+    print(f"Done: {symbol}")
 
 
 def get_sp500_symbols():

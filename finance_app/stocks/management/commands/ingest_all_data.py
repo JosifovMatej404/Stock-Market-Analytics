@@ -9,4 +9,4 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         batch_ingest_all_symbols.delay()
-        self.stdout.write(self.style.SUCCESS("✅ Queued all historical ingestion tasks."))
+        self.stdout.write(self.style.SUCCESS("Queued all historical ingestion tasks."))

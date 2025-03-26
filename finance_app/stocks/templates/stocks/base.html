@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Stock Analyzer{% endblock %}</title>
+    <style>
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f7fa;
+            color: #222;
+            line-height: 1.6;
+            padding-top: 70px;
+        }
+
+        /* 🌐 Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #1e1e2f;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
+
+        nav div:first-child {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #00d1b2;
+        }
+
+        /* 🧱 Main Container */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        /* 🪟 Section Wrapper */
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            border-left: 6px solid #2c3e50;
+        }
+
+        /* 🧼 Footer */
+        footer {
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        a {
+            color: #2c3e50;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🔝 Navbar -->
+    <nav>
+        <div>📈 Stock Market Analyzer</div>
+        <div>
+            <a href="{% url 'landing' %}">🏠 Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- 📦 Page Content -->
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- ⚖️ Footer -->
+    <footer>
+        © 2025 Stock Market Analyzer — Licensed under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a>
+    </footer>
+
+</body>
+</html>

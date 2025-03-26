@@ -5,6 +5,15 @@ from celery import shared_task
 from stocks.services.ingestion import fetch_historical_data, fetch_all_realtime_data
 from stocks.models import Stock
 from stocks.services.analysis import analyze_stock
+from stocks.services.visualization import plot_candlestick_chart
+
+
+@shared_task
+def plot_candlestick_chart_task(symbol, days=90):
+    plot_candlestick_chart(symbol, days)
+    return f"Graph vizualized for {symbol}"
+
+
 
 @shared_task
 def ingest_historical_task(symbol):
@@ -37,3 +46,9 @@ def ingest_realtime_all_stocks():
 def analyze_all_stocks():
     for stock in Stock.objects.all():
         analyze_stock(stock.symbol)
+
+
+
+@shared_task
+def analyze_stock_task(symbol):
+    analyze_stock(symbol)
