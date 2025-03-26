@@ -30,6 +30,7 @@ class StockSignal(models.Model):
     trend = models.CharField(max_length=20)  # 'UP', 'DOWN', 'SIDEWAYS'
     action = models.CharField(max_length=10)  # 'BUY', 'SELL', 'HOLD'
     predicted_price = models.FloatField(null=True, blank=True)
+    candle_chart_html = models.TextField(blank=True, null=True)
 
     class Meta:
         unique_together = ('stock', 'timestamp')

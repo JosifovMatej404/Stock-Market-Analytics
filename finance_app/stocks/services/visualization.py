@@ -5,7 +5,7 @@ from plotly.offline import plot
 from datetime import datetime, timedelta
 
 
-def plot_candlestick_chart(symbol, days=90):
+def plot_candlestick_chart(symbol, days=366):
     stock = Stock.objects.get(symbol=symbol)
 
     # Get only the most recent `days` worth of data
