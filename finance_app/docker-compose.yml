@@ -4,7 +4,7 @@ services:
   web:
     build: .
     container_name: stock_web
-    command: gunicorn finance_app.wsgi:application --bind 0.0.0.0:8000 --workers=2 --timeout 120
+    command: gunicorn finance_app.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - .:/app
       - static_volume:/app/staticfiles
@@ -15,7 +15,6 @@ services:
     depends_on:
       - db
       - redis
-
 
   db:
     image: postgres:15
@@ -39,7 +38,7 @@ services:
   celery:
     build: .
     container_name: stock_celery
-    command: celery -A finance_app worker --loglevel=info
+    command: celery -A finance_app worker --loglevel=info --concurrency=2 --prefetch-multiplier=1
     volumes:
       - .:/app
     env_file:
@@ -47,8 +46,9 @@ services:
     depends_on:
       - redis
       - db
-      - web
-
+    environment:
+      CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP: "true"
+      C_FORCE_ROOT: "1"  # Remove this later if running Celery as a non-root user
 
   celery-beat:
     build: .
@@ -62,7 +62,6 @@ services:
       - web
       - redis
       - db
-
 
 volumes:
   postgres_data:
