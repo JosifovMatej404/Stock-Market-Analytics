@@ -1,29 +1,38 @@
 import time
-from django.core.management.base import BaseCommand
 from stocks.models import Stock
-from stocks.tasks import analyze_stock_task
-
-# sudo docker exec -it stock_web python manage.py reanalyze_all
-# For manually requesting a reanalyzing of all companies, Celery task scheduled for it
-
+from stocks.services.analysis import analyze_stock
 
 class Command(BaseCommand):
-    help = "Re-analyze all companies in batches to prevent overload"
+    help = "Re-analyze all companies one-by-one, ensuring completion before moving to next"
 
     def handle(self, *args, **options):
         symbols = list(Stock.objects.values_list("symbol", flat=True))
         total = len(symbols)
-        batch_size = 5
 
-        self.stdout.write(f"Starting re-analysis for {total} stocks in batches of {batch_size}...")
+        if not symbols:
+            self.stdout.write(self.style.WARNING("No stocks found in database!"))
+            return
 
-        for i in range(0, len(symbols), batch_size):
-            batch = symbols[i:i + batch_size]
-            for symbol in batch:
-                analyze_stock_task.delay(symbol)
-                self.stdout.write(f"Queued {symbol} for re-analysis")
+        self.stdout.write(f" Starting sequential re-analysis for {total} stocks...")
 
+        for idx, symbol in enumerate(symbols, start=1):
+            success = False
+            retries = 3  # Retries per stock in case of failure
 
-            time.sleep(10)
+            for attempt in range(retries):
+                try:
+                    self.stdout.write(f"🔍 [{idx}/{total}] Analyzing {symbol}... (Attempt {attempt + 1})")
+                    analyze_stock(symbol)
+                    self.stdout.write(self.style.SUCCESS(f"✅ {symbol} analysis completed!"))
+                    success = True
+                    break  # Move to next stock if successful
+                except Exception as e:
+                    self.stdout.write(self.style.ERROR(f"Error analyzing {symbol}: {e}"))
 
-        self.stdout.write(self.style.SUCCESS("All analysis tasks have been queued successfully."))
+            if not success:
+                self.stdout.write(self.style.ERROR(f" {symbol} failed after {retries} attempts, skipping!"))
+
+            # Small delay to prevent overloading CPU/DB
+            time.sleep(2)  # Adjust if needed
+
+        self.stdout.write(self.style.SUCCESS(" Re-analysis process completed!"))
