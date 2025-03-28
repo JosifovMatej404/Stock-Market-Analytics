@@ -1,6 +1,8 @@
 import time
 from stocks.models import Stock
 from stocks.services.analysis import analyze_stock
+from django.core.management.base import BaseCommand
+
 
 class Command(BaseCommand):
     help = "Re-analyze all companies one-by-one, ensuring completion before moving to next"
