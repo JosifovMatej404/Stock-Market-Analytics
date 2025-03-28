@@ -18,7 +18,7 @@ class Command(BaseCommand):
         self.stdout.write(f"🔥 Starting re-analysis for {total} stocks...")
 
         active_tasks = []
-        max_concurrent_tasks = 3 
+        max_concurrent_tasks = 3
 
         for idx, symbol in enumerate(symbols, start=1):
             # Wait if active tasks are at max limit

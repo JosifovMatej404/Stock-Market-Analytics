@@ -32,18 +32,17 @@ services:
   redis:
     image: redis:7
     container_name: stock_redis
-    command: redis-server --maxmemory 100mb --maxmemory-policy allkeys-lru
     ports:
       - "6379:6379"
+    command: redis-server --maxmemory 100mb --maxmemory-policy allkeys-lru
     environment:
-      - REDIS_TIMEOUT=30
-      - REDIS_TCP_KEEPALIVE=300
-      - REDIS_LOGLEVEL=warning
+      - REDIS_MAXMEMORY=100mb
+      - REDIS_MAXMEMORY_POLICY=allkeys-lru
 
   celery:
     build: .
     container_name: stock_celery
-    command: celery -A finance_app worker --loglevel=info --concurrency=2 --prefetch-multiplier=1
+    command: celery -A finance_app worker --loglevel=info --concurrency=1 --prefetch-multiplier=1
     volumes:
       - .:/app
     env_file:
@@ -52,9 +51,15 @@ services:
       - redis
       - db
     environment:
-      CELERY_BROKER_URL: "redis://redis:6379/0"
-      CELERY_BROKER_TRANSPORT_OPTIONS: "{'socket_timeout': 30, 'retry_on_timeout': True}"
-      C_FORCE_ROOT: "1"  # Remove this if not running as root
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+      CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP: "true"
+      C_FORCE_ROOT: "1"
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.5"
 
   celery-beat:
     build: .
@@ -65,6 +70,7 @@ services:
     env_file:
       - .env
     depends_on:
+      - web
       - redis
       - db
 
