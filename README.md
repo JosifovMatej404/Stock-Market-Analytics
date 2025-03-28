@@ -17,6 +17,10 @@ By integrating these services, the system will deliver a fast, scalable, and rel
 Mockup: https://www.figma.com/design/V3mX8VN8F7U72oBzyZqgG5/MOCKUP-FOR-SMA?node-id=0-1&p=f&t=0CeB3qTEfKYRdInP-0
 <h1></h1>
 
+
+❗❗❗ Video in case host fails:
+https://www.youtube.com/watch?v=f2HpL1EnWrU
+
 <br>
 
 <br>
