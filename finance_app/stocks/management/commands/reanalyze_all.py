@@ -17,7 +17,7 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.WARNING(f"🔥 Starting re-analysis for {total} stocks..."))
 
-        
+
         MAX_CONCURRENT = 3
         running_tasks = {}
 
@@ -25,22 +25,22 @@ class Command(BaseCommand):
         while idx < len(symbols) or running_tasks:
 
             finished_tasks = [
-                task_id for task_id, async_result in running_tasks.items()
-                if async_result.ready()
+                symbol for symbol, task in running_tasks.items()
+                if AsyncResult(task.id).ready()
             ]
-            for task_id in finished_tasks:
-                running_tasks.pop(task_id)
-                self.stdout.write(self.style.SUCCESS(f"✅ Completed: {task_id}"))
+            for symbol in finished_tasks:
+                running_tasks.pop(symbol)
+                self.stdout.write(self.style.SUCCESS(f"✅ Completed: {symbol}"))
 
-
+            # ✅ Start new tasks if we are below the limit
             while len(running_tasks) < MAX_CONCURRENT and idx < len(symbols):
                 symbol = symbols[idx]
-                async_result = analyze_stock_task.delay(symbol)
-                running_tasks[symbol] = async_result
+                task = analyze_stock_task.delay(symbol)
+                running_tasks[symbol] = task
                 self.stdout.write(f"🚀 [{idx+1}/{total}] Queued analysis for {symbol}")
                 idx += 1
 
 
             time.sleep(10)
 
-        self.stdout.write(self.style.SUCCESS("🎉All analysis tasks completed successfully!"))
+        self.stdout.write(self.style.SUCCESS("🎉 All analysis tasks completed successfully!"))
