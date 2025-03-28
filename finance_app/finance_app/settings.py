@@ -154,3 +154,11 @@ CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_BEAT_SCHEDULE = {}
 CELERY_TIMEZONE = 'UTC'
+CELERY_BROKER_TRANSPORT_OPTIONS = {
+    "visibility_timeout": 3600,  # Messages stay in Redis queue for 1 hour
+    "socket_timeout": 30,  # Increase socket timeout to 30 seconds (default 5s)
+    "retry_on_timeout": True,  # Retry if Redis times out
+}
+
+CELERY_WORKER_PREFETCH_MULTIPLIER = 1  
+CELERY_ACKS_LATE = True
