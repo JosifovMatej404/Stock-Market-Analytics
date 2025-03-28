@@ -32,8 +32,13 @@ services:
   redis:
     image: redis:7
     container_name: stock_redis
+    command: redis-server --maxmemory 100mb --maxmemory-policy allkeys-lru
     ports:
       - "6379:6379"
+    environment:
+      - REDIS_TIMEOUT=30
+      - REDIS_TCP_KEEPALIVE=300
+      - REDIS_LOGLEVEL=warning
 
   celery:
     build: .
@@ -47,9 +52,9 @@ services:
       - redis
       - db
     environment:
-      CELERY_BROKER_URL: redis://redis:6379/0
-      CELERY_RESULT_BACKEND: redis://redis:6379/0
-      CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP: "true"
+      CELERY_BROKER_URL: "redis://redis:6379/0"
+      CELERY_BROKER_TRANSPORT_OPTIONS: "{'socket_timeout': 30, 'retry_on_timeout': True}"
+      C_FORCE_ROOT: "1"  # Remove this if not running as root
 
   celery-beat:
     build: .
@@ -60,13 +65,8 @@ services:
     env_file:
       - .env
     depends_on:
-      - web
       - redis
       - db
-    environment:
-      CELERY_BROKER_URL: redis://redis:6379/0
-      CELERY_RESULT_BACKEND: redis://redis:6379/0
-      CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP: "true"
 
 volumes:
   postgres_data:
